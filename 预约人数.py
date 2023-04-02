@@ -88,7 +88,7 @@ while True:
         print("当前时间" + minute)
 
         # 输出出错信息到文件
-        with open(file_error_name, mode='a', newline='', encoding='utf-8') as f:
+        with open(file_error_name, mode='a', newline='') as f:
             f.write(minute + " 错误信息 " + str(e) + '\n')
         print("Error:", e)
         time.sleep(60)
