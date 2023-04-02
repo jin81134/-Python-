@@ -9,7 +9,7 @@ import time
 while True:
     try:
 
-        # "碧蓝档案官网数据"
+        # "蔚蓝档案官网数据"
         url = 'https://bluearchive-cn.com/api/pre-reg/stats'
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36'}
