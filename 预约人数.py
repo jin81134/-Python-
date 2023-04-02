@@ -9,7 +9,7 @@ import time
 while True:
     try:
 
-        # "碧蓝档案官网数据"
+        # "蔚蓝档案官网数据"
         url = 'https://bluearchive-cn.com/api/pre-reg/stats'
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36'}
@@ -78,7 +78,7 @@ while True:
                 writer.writerow(file_write)  # 写入变量数据
         time.sleep(60)
 
-    except Exception as e:  # 输出出错文件到
+    except Exception as e:  # 输出出错信息到文件
         with open(file_error_name,  mode='a', newline='') as f:
             f.write(minute + " 错误信息 " + str(e) + '\n')
         print("Error:", e)
