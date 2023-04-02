@@ -1,9 +1,4 @@
-2023-04-02 12:52 错误信息 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DB077499F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
-2023-04-02 12:52 错误信息 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DB07748640>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
-2023-04-02 14:22 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
-2023-04-02 14:23 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
-2023-04-02 14:33 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
-2023-04-02 14:34 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
-2023-04-02 14:34 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
-2023-04-02 14:36 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
-2023-04-02 14:36 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
+2023-04-02 14:58 错误信息 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000025CDB9D49A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2023-04-02 14:59 错误信息 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D78D7349A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2023-04-02 15:00 错误信息 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D78D7348B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2023-04-02 15:01 错误信息 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence

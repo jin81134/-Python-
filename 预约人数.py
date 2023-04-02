@@ -6,10 +6,13 @@ from datetime import datetime
 import os.path
 import time
 
+file_name = "预约数据.csv"  # 数据保存位置
+file_error_name = '预约数据-出错信息.txt'  # 错误信息位置
+
 while True:
     try:
 
-        # "蔚蓝档案官网数据"
+        # "碧蓝档案官网数据"
         url = 'https://bluearchive-cn.com/api/pre-reg/stats'
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36'}
@@ -45,11 +48,9 @@ while True:
         # 获取当前时间
         now = datetime.now()
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
-        print("当前时间 " + minute)
+        print("当前时间" + minute)
 
         # 定义CSV文件的字段名称
-        file_name = "预约数据.csv"  # 保存文件的名称
-        file_error_name = "预约数据-出错信息.txt"  # 输出错误信息文件
         field_names = ['时间', '官网数据', 'BiliBili数据', 'TapTap数据', '合计']  # 表头
         file_write = [minute, Ba_ba_api, Bili_ba_api, Tap_ba_api, sum]  # 写入变量数据
 
@@ -66,7 +67,7 @@ while True:
                         writer.writerow(file_write)  # 写入变量数据
                 else:
                     print("表头不存在或与定义的字段名称不匹配")
-                    with open(file_name, mode='w', newline='', encoding='utf-8') as file:
+                    with open(file_name, mode='a', newline='', encoding='utf-8') as file:
                         writer = csv.writer(file)
                         writer.writerow(field_names)  # 写入CSV文件的表头
                         writer.writerow(file_write)  # 写入变量数据
@@ -78,7 +79,14 @@ while True:
                 writer.writerow(file_write)  # 写入变量数据
         time.sleep(60)
 
-    except Exception as e:  # 输出出错信息到文件
+    except Exception as e:
+
+        # 获取当前时间
+        now = datetime.now()
+        minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
+        print("当前时间" + minute)
+
+        # 输出出错信息到文件
         with open(file_error_name, mode='a', newline='', encoding='utf-8') as f:
             f.write(minute + " 错误信息 " + str(e) + '\n')
         print("Error:", e)
