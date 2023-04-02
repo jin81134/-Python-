@@ -66,7 +66,7 @@ while True:
                         writer.writerow(file_write)  # 写入变量数据
                 else:
                     print("表头不存在或与定义的字段名称不匹配")
-                    with open(file_name, mode='a', newline='') as file:
+                    with open(file_name, mode='w', newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(field_names)  # 写入CSV文件的表头
                         writer.writerow(file_write)  # 写入变量数据
