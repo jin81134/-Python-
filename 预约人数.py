@@ -7,12 +7,12 @@ import os.path
 import time
 
 file_name = "预约数据.csv"  # 数据保存位置
-file_error_name = '预约数据-出错信息.txt'  # 错误信息位置
+file_error_name = "预约数据-出错信息.txt"  # 错误信息位置
 
 while True:
     try:
 
-        # "碧蓝档案官网数据"
+        # "蔚蓝档案官网数据"
         url = 'https://bluearchive-cn.com/api/pre-reg/stats'
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36'}
@@ -48,7 +48,7 @@ while True:
         # 获取当前时间
         now = datetime.now()
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
-        print("当前时间" + minute)
+        print("当前时间 " + minute)
 
         # 定义CSV文件的字段名称
         field_names = ['时间', '官网数据', 'BiliBili数据', 'TapTap数据', '合计']  # 表头
