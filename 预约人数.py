@@ -61,25 +61,25 @@ while True:
                 headers = next(reader, None)  # 读取表头
                 if headers == field_names:
                     print("表头已存在")
-                    with open(file_name, mode='a', newline='') as file:
+                    with open(file_name, mode='a', newline='', encoding='utf-8') as file:
                         writer = csv.writer(file)
                         writer.writerow(file_write)  # 写入变量数据
                 else:
                     print("表头不存在或与定义的字段名称不匹配")
-                    with open(file_name, mode='w', newline='') as file:
+                    with open(file_name, mode='w', newline='', encoding='utf-8') as file:
                         writer = csv.writer(file)
                         writer.writerow(field_names)  # 写入CSV文件的表头
                         writer.writerow(file_write)  # 写入变量数据
         else:
             print("CSV文件不存在")
-            with open(file_name, mode='a', newline='') as file:
+            with open(file_name, mode='a', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
                 writer.writerow(field_names)  # 写入CSV文件的表头
                 writer.writerow(file_write)  # 写入变量数据
         time.sleep(60)
 
     except Exception as e:  # 输出出错信息到文件
-        with open(file_error_name, mode='a', newline='') as f:
+        with open(file_error_name, mode='a', newline='', encoding='utf-8') as f:
             f.write(minute + " 错误信息 " + str(e) + '\n')
         print("Error:", e)
         time.sleep(60)
