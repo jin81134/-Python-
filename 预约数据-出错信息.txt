@@ -1,4 +1,2 @@
-2023-04-02 14:58 閿欒淇℃伅 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000025CDB9D49A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
-2023-04-02 14:59 閿欒淇℃伅 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D78D7349A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
-2023-04-02 15:00 閿欒淇℃伅 HTTPSConnectionPool(host='bluearchive-cn.com', port=443): Max retries exceeded with url: /api/pre-reg/stats (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D78D7348B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
-2023-04-02 15:01 閿欒淇℃伅 'gbk' codec can't decode byte 0xae in position 52: illegal multibyte sequence
+2023-04-02 17:28 错误信息 [Errno 13] Permission denied: '预约数据.csv'
+2023-04-02 17:29 错误信息 [Errno 13] Permission denied: '预约数据.csv'
