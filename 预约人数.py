@@ -62,19 +62,19 @@ while True:
                 headers = next(reader, None)  # 读取表头
                 if headers == field_names:
                     print("表头已存在")
-                    with open(file_name, mode='a', newline='', encoding='utf-8') as file:
+                    with open(file_name, mode='a', newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(file_write)  # 写入变量数据
                 else:
                     print("表头与定义的字段名称不匹配,请检查")
-                    with open(file_name, mode='a', newline='', encoding='utf-8') as file:
+                    with open(file_name, mode='a', newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(field_names)  # 写入CSV文件的表头
                         writer.writerow(file_write)  # 写入变量数据
                         exit(1)
         else:
             print("CSV文件不存在")
-            with open(file_name, mode='a', newline='', encoding='utf-8') as file:
+            with open(file_name, mode='a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow(field_names)  # 写入CSV文件的表头
                 writer.writerow(file_write)  # 写入变量数据
