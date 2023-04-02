@@ -45,7 +45,7 @@ while True:
         # 获取当前时间
         now = datetime.now()
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
-        print("当前时间" + minute)
+        print("当前时间 " + minute)
 
         # 定义CSV文件的字段名称
         file_name = "预约数据.csv"  # 保存文件的名称
