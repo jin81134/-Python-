@@ -48,7 +48,7 @@ while True:
         print("当前时间" + minute)
 
         # 定义CSV文件的字段名称
-        file_name = "预约数据.csv"
+        file_name = "预约数据.csv"  # 保存文件的名称
         file_error_name = "预约数据-出错信息.txt"  # 输出错误信息文件
         field_names = ['时间', '官网数据', 'BiliBili数据', 'TapTap数据', '合计']  # 表头
         file_write = [minute, Ba_ba_api, Bili_ba_api, Tap_ba_api, sum]  # 写入变量数据
@@ -79,7 +79,7 @@ while True:
         time.sleep(60)
 
     except Exception as e:  # 输出出错信息到文件
-        with open(file_error_name,  mode='a', newline='') as f:
+        with open(file_error_name, mode='a', newline='') as f:
             f.write(minute + " 错误信息 " + str(e) + '\n')
         print("Error:", e)
         time.sleep(60)
