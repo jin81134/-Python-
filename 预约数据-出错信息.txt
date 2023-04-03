@@ -1,2 +1,0 @@
-2023-04-02 17:28 错误信息 [Errno 13] Permission denied: '预约数据.csv'
-2023-04-02 17:29 错误信息 [Errno 13] Permission denied: '预约数据.csv'
