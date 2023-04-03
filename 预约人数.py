@@ -73,7 +73,7 @@ while True:
                         writer.writerow(file_write)  # 写入变量数据
                         exit(1)
         else:
-            print("CSV文件不存在")
+            print("CSV文件不存在，已创建文件 " + file_name)
             with open(file_name, mode='a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow(field_names)  # 写入CSV文件的表头
