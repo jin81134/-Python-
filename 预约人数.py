@@ -29,7 +29,7 @@ while True:
         print("当前时间" + minute)
         # 输出出错信息到文件
         with open(file_error_name, mode='a', newline='') as f:
-            f.write(minute + " 错误信息 蔚蓝档案官网 " + str(e) + '\n')
+            f.write(minute + " 错误信息 蔚蓝档案官网 " + str(e) + '\r\n')
         print("Error:", e)
         Ba_ba_api = -1
 
@@ -51,7 +51,7 @@ while True:
         print("当前时间" + minute)
         # 输出出错信息到文件
         with open(file_error_name, mode='a', newline='') as f:
-            f.write(minute + " 错误信息 B站 " + str(e) + '\n')
+            f.write(minute + " 错误信息 B站 " + str(e) + '\r\n')
         print("Error:", e)
         Bili_ba_api = -1
 
@@ -72,7 +72,7 @@ while True:
         print("当前时间" + minute)
         # 输出出错信息到文件
         with open(file_error_name, mode='a', newline='') as f:
-            f.write(minute + " 错误信息 Tap " + str(e) + '\n')
+            f.write(minute + " 错误信息 Tap " + str(e) + '\r\n')
         print("Error:", e)
         Tap_ba_api = -1
 
@@ -123,6 +123,6 @@ while True:
 
         # 输出出错信息到文件
         with open(file_error_name, mode='a', newline='') as f:
-            f.write(minute + " 错误信息 写入文件 " + str(e) + '\n')
+            f.write(minute + " 错误信息 写入文件 " + str(e) + '\r\n')
         print("Error:", e)
     time.sleep(60)
