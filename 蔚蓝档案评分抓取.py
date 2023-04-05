@@ -25,20 +25,21 @@ while True:
         # Bili_ba_api2 = data_dict['data']['valid_comment_number']  # 未知人数
         Bili_ba_api3 = data_dict['data']['star_number_list']  # 分段评分人数
         stra_1, stra_2, stra_3, stra_4, stra_5 = Bili_ba_api3  # 每个星级赋予不同变量,1,2,3,4,5
-        average = (stra_1 * 1 + stra_2 * 2 + stra_3 * 3 + stra_4 * 4 + stra_5 * 5) / (
-                    stra_1 + stra_2 + stra_3 + stra_4 + stra_5)*2
+        Difference_value1 = (stra_1 + stra_2 + stra_3 + stra_4 + stra_5) - Bili_ba_api1
         print("B站评价 " + str(Bili_ba_api) + "分  " "评价人数 " + str(Bili_ba_api1) + "  1星" + str(stra_1) + "  2星" + str(
-            stra_2) + "  3星" + str(stra_3) + "  4星" + str(stra_4) + "  5星" + str(stra_5) + "  计算评分" + str(average))
+            stra_2) + "  3星" + str(stra_3) + "  4星" + str(stra_4) + "  5星" + str(stra_5) + "  评价人数-评分人数:" + str(
+            Difference_value1))
 
         # 获取当前时间
         now = datetime.now()
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
-        print("当前时间 " + minute)
+        # print("当前时间 " + minute)
 
         # 定义CSV文件的字段名称
-        field_names = ['时间', 'Bilibili评分', '评价人数', '1星', '2星', '3星', '4星', '5星', '计算评分']  # 表头
-        file_write = [minute, Bili_ba_api, Bili_ba_api1, stra_1, stra_2, stra_3, stra_4, stra_5, average]  # 写入变量数据
+        field_names = ['时间', 'Bilibili评分', '评价人数', '1星', '2星', '3星', '4星', '5星', '评价人数-评分人数']  # 表头
+        file_write = [minute, Bili_ba_api, Bili_ba_api1, stra_1, stra_2, stra_3, stra_4, stra_5, Difference_value1]  #
 
+        # 写入变量数据
         # 检查CSV文件是否存在
         if os.path.exists(file_name):
             # 如果文件存在，则检查表头是否存在
@@ -46,7 +47,7 @@ while True:
                 reader = csv.reader(csvfile)
                 headers = next(reader, None)  # 读取表头
                 if headers == field_names:
-                    print("表头已存在")
+                    # print("表头已存在")
                     with open(file_name, mode='a', newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(file_write)  # 写入变量数据
@@ -93,8 +94,10 @@ while True:
         Tap_ba_api4 = data_dict['data']['stat']['vote_info']['3']  # 分段评价人数 3星
         Tap_ba_api5 = data_dict['data']['stat']['vote_info']['4']  # 分段评价人数 4星
         Tap_ba_api6 = data_dict['data']['stat']['vote_info']['5']  # 分段评价人数 5星
+        Difference_value2 = (Tap_ba_api2 + Tap_ba_api3 + Tap_ba_api4 + Tap_ba_api5 + Tap_ba_api6) - Tap_ba_api1
         print("Tap评价 " + str(Tap_ba_api) + "分  " "评价人数 " + str(Tap_ba_api1) + "  1星" + str(Tap_ba_api2) + "  2星" + str(
-            Tap_ba_api3) + "  3星" + str(Tap_ba_api4) + "  4星" + str(Tap_ba_api5) + "  5星" + str(Tap_ba_api6))
+            Tap_ba_api3) + "  3星" + str(Tap_ba_api4) + "  4星" + str(Tap_ba_api5) + "  5星" + str(Tap_ba_api6) +
+              "  评价人数-评分人数:" + str(Difference_value2))
 
         # 获取当前时间
         now = datetime.now()
@@ -102,9 +105,9 @@ while True:
         print("当前时间 " + minute)
 
         # 定义CSV文件的字段名称
-        field_names = ['时间', 'Tap评分', '评价人数', '1星', '2星', '3星', '4星', '5星']  # 表头
+        field_names = ['时间', 'Tap评分', '评价人数', '1星', '2星', '3星', '4星', '5星', '评价人数-评分人数']  # 表头
         file_write = [minute, Tap_ba_api, Tap_ba_api1, Tap_ba_api2, Tap_ba_api3, Tap_ba_api4, Tap_ba_api5,
-                      Tap_ba_api6]  # 写入变量数据
+                      Tap_ba_api6, Difference_value2]  # 写入变量数据
 
         # 检查CSV文件是否存在
         if os.path.exists(file_name2):
@@ -113,7 +116,7 @@ while True:
                 reader = csv.reader(csvfile)
                 headers = next(reader, None)  # 读取表头
                 if headers == field_names:
-                    print("表头已存在")
+                    # print("表头已存在")
                     with open(file_name2, mode='a', newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(file_write)  # 写入变量数据
