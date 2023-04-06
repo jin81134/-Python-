@@ -37,7 +37,7 @@ while True:
 
         # 定义CSV文件的字段名称
         field_names = ['时间', 'Bilibili评分', '评价人数', '1星', '2星', '3星', '4星', '5星', '评价人数-评分人数']  # 表头
-        file_write = [minute, Bili_ba_api, Bili_ba_api1, stra_1, stra_2, stra_3, stra_4, stra_5, Difference_value1]  #
+        file_write = [minute, Bili_ba_api, Bili_ba_api1, stra_1, stra_2, stra_3, stra_4, stra_5, Difference_value1]
 
         # 写入变量数据
         # 检查CSV文件是否存在
