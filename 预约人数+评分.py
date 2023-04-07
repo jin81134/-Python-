@@ -70,7 +70,7 @@ while True:
         Bili_ba_api2 = data_dict['data']['valid_comment_number']  # 未知人数
         Bili_ba_api3 = data_dict['data']['star_number_list']  # 分段评分人数
         stra_1, stra_2, stra_3, stra_4, stra_5 = Bili_ba_api3  # 每个星级赋予不同变量,1,2,3,4,5
-        Difference_value1 = (stra_1 + stra_2 + stra_3 + stra_4 + stra_5) - Bili_ba_api1
+        Difference_value1 = -(stra_1 + stra_2 + stra_3 + stra_4 + stra_5) + Bili_ba_api1
         print("B站评价 " + str(Bili_ba_api0) + "分  " "评价人数 " + str(Bili_ba_api1) + "  1星" + str(stra_1) + "  2星" + str(
             stra_2) + "  3星" + str(stra_3) + "  4星" + str(stra_4) + "  5星" + str(stra_5) + "  评价人数-评分人数:" + str(
             Difference_value1))
@@ -136,7 +136,7 @@ while True:
         Tap_ba_api4 = data_dict['data']['stat']['vote_info']['3']  # 分段评价人数 3星
         Tap_ba_api5 = data_dict['data']['stat']['vote_info']['4']  # 分段评价人数 4星
         Tap_ba_api6 = data_dict['data']['stat']['vote_info']['5']  # 分段评价人数 5星
-        Difference_value2 = (Tap_ba_api2 + Tap_ba_api3 + Tap_ba_api4 + Tap_ba_api5 + Tap_ba_api6) - Tap_ba_api1
+        Difference_value2 = -(Tap_ba_api2 + Tap_ba_api3 + Tap_ba_api4 + Tap_ba_api5 + Tap_ba_api6) + Tap_ba_api1
         print("Tap数据 " + str(Tap_ba_api))
         print("Tap评价 " + str(Tap_ba_api0) + "分  " "评价人数 " + str(Tap_ba_api1) + "  1星" + str(Tap_ba_api2) + "  2星" + str(
             Tap_ba_api3) + "  3星" + str(Tap_ba_api4) + "  4星" + str(Tap_ba_api5) + "  5星" + str(Tap_ba_api6) +
