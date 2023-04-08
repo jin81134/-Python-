@@ -1,13 +1,26 @@
 # coding:utf-8
-import requests
-import json
 import csv
-from datetime import datetime
-import os.path
+import json
 import time
+import os.path
+import requests
+from datetime import datetime
 
-file_name = "预约数据.csv"  # 数据保存位置
-file_error_name = "预约数据-出错信息.txt"  # 错误信息位置
+# 创建文件夹
+path1 = r'D:\数据\预约数据\\'
+
+
+def create_folders(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print(f"已创建文件夹: {path}")
+    else:
+        print(f"文件夹已存在: {path}")
+
+
+create_folders(path1)
+file_name = path1 + "预约数据.csv"  # 数据保存位置
+file_error_name = path1 + "预约数据-出错信息.txt"  # 错误信息位置
 
 while True:
 

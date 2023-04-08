@@ -6,9 +6,23 @@ import time
 from datetime import datetime
 import requests
 
-file_name1 = "蔚蓝档案评分抓取_B站.csv"  # 数据保存位置1
-file_name2 = "蔚蓝档案评分抓取_Tap.csv"  # 数据保存位置2
-file_error_name1 = "蔚蓝档案评分抓取-出错信息.txt"  # 错误信息位置
+# 创建文件夹
+path2 = r'D:\数据\评分抓取\\'
+
+
+def create_folders(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print(f"已创建文件夹: {path}")
+    else:
+        print(f"文件夹已存在: {path}")
+
+
+create_folders(path2)
+file_name1 = path2 + "蔚蓝档案评分抓取_B站.csv"  # 数据保存位置1
+file_name2 = path2 + "蔚蓝档案评分抓取_Tap.csv"  # 数据保存位置2
+file_error_name1 = path2 + "蔚蓝档案评分抓取-出错信息.txt"  # 错误信息位置
+
 
 while True:
     # Bilibili评价数据

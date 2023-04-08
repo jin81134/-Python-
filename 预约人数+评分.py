@@ -1,16 +1,33 @@
 # coding:utf-8
-import requests
-import json
 import csv
-from datetime import datetime
-import os.path
+import json
 import time
+import os.path
+import requests
+from datetime import datetime
 
-file_name = "预约数据.csv"  # 数据保存位置
-file_error_name = "预约数据-出错信息.txt"  # 错误信息位置
-file_name1 = "蔚蓝档案评分抓取_B站.csv"  # 数据保存位置1
-file_name2 = "蔚蓝档案评分抓取_Tap.csv"  # 数据保存位置2
-file_error_name1 = "蔚蓝档案评分抓取-出错信息.txt"  # 错误信息位置
+# 创建文件夹
+path1 = r'D:\数据\预约数据\\'
+path2 = r'D:\数据\评分抓取\\'
+
+
+def create_folders(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print(f"已创建文件夹: {path}")
+    else:
+        print(f"文件夹已存在: {path}")
+
+
+create_folders(path1)
+create_folders(path2)
+
+
+file_name = path1 + "预约数据.csv"  # 数据保存位置
+file_name1 = path2 + "蔚蓝档案评分抓取_B站.csv"  # 数据保存位置1
+file_name2 = path2 + "蔚蓝档案评分抓取_Tap.csv"  # 数据保存位置2
+file_error_name = path1 + "预约数据-出错信息.txt"  # 错误信息位置
+file_error_name1 = path2 + "蔚蓝档案评分抓取-出错信息.txt"  # 错误信息位置
 
 while True:
 
@@ -31,6 +48,8 @@ while True:
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
         print("当前时间" + minute)
         # 输出出错信息到文件
+        create_folders(path1)
+        create_folders(path2)
         with open(file_error_name, mode='a', newline='') as f:
             f.write(minute + " 错误信息 蔚蓝档案官网 " + str(e) + '\r\n')
         print("错误信息 蔚蓝档案官网:", e)
@@ -52,6 +71,8 @@ while True:
         now = datetime.now()
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
         # 输出出错信息到文件
+        create_folders(path1)
+        create_folders(path2)
         with open(file_error_name, mode='a', newline='') as f:
             f.write(minute + " 错误信息 B站预约数据：" + str(e) + '\r\n')
         print("错误信息 B站:", e)
@@ -79,6 +100,8 @@ while True:
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
         print("当前时间" + minute)
         # 输出出错信息到文件
+        create_folders(path1)
+        create_folders(path2)
         with open(file_error_name1, mode='a', newline='') as f:
             f.write(minute + " Bilibili评分错误信息：" + str(e) + '\r\n')
         print("Bilibili评分错误信息：", e)
@@ -126,6 +149,8 @@ while True:
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
         print("当前时间" + minute)
         # 输出出错信息到文件
+        create_folders(path1)
+        create_folders(path2)
         with open(file_error_name1, mode='a', newline='') as f:
             f.write(minute + " Bilibili文件错误信息：" + str(e) + '\r\n')
         print("Bilibili文件错误信息：", e)
@@ -156,10 +181,13 @@ while True:
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
         print("当前时间" + minute)
         # 输出出错信息到文件
+        create_folders(path1)
+        create_folders(path2)
         with open(file_error_name, mode='a', newline='') as f:
             f.write(minute + " Tap获取错误信息 " + str(e) + '\r\n')
         print("Tap获取错误：", e)
-        minute, Tap_ba_api, Tap_ba_api0, Tap_ba_api1, Tap_ba_api2, Tap_ba_api3, Tap_ba_api4, Tap_ba_api5, Tap_ba_api6, Difference_value2 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        minute, Tap_ba_api, Tap_ba_api0, Tap_ba_api1, Tap_ba_api2, Tap_ba_api3, Tap_ba_api4, Tap_ba_api5, Tap_ba_api6, Difference_value2 = [
+            -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 
     # 写入Tap评分信息
     try:
@@ -203,6 +231,8 @@ while True:
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
         print("当前时间" + minute)
         # 输出出错信息到文件
+        create_folders(path1)
+        create_folders(path2)
         with open(file_error_name, mode='a', newline='') as f:
             f.write(minute + " Tap文件写入错误：" + str(e) + '\r\n')
         print("Tap文件写入错误：", e)
@@ -252,6 +282,8 @@ while True:
         minute = now.strftime("%Y-%m-%d %H:%M")  # 格式化为精确到分钟的字符串
         print("当前时间" + minute)
         # 输出出错信息到文件
+        create_folders(path1)
+        create_folders(path2)
         with open(file_error_name, mode='a', newline='') as f:
             f.write(minute + " 预约数据文件写入错误信息：" + str(e) + '\r\n')
         print("预约数据文件写入错误信息：", e)
