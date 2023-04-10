@@ -1,7 +1,8 @@
 # coding:utf-8
 import csv
-import json
+import sys
 import time
+import json
 import os.path
 import requests
 from datetime import datetime
@@ -136,7 +137,7 @@ while True:
                         writer.writerow(file_write)  # 写入变量数据
                     print("\033[31m程序已终止，按任意键退出……\033[0m")
                     input()
-                    exit(1)
+                    sys.exit(1)
         else:
             print("CSV文件不存在，已创建文件 " + file_name1)
             with open(file_name1, mode='a', newline='') as file:
@@ -221,7 +222,7 @@ while True:
                         writer.writerow(file_write1)  # 写入变量数据
                     print("\033[31m程序已终止，按任意键退出……\033[0m")
                     input()
-                    exit(1)
+                    sys.exit(1)
         else:
             print("CSV文件不存在，已创建文件 " + file_name2)
             with open(file_name2, mode='a', newline='') as file:
@@ -273,7 +274,7 @@ while True:
                         writer.writerow(file_write)  # 写入变量数据
                     print("\033[31m程序已终止，按任意键退出……\033[0m")
                     input()
-                    exit(1)
+                    sys.exit(1)
         else:
             print("CSV文件不存在，已创建文件 " + file_name)
             with open(file_name, mode='a', newline='') as file:
