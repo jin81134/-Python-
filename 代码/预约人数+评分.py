@@ -134,7 +134,9 @@ while True:
                         writer = csv.writer(file)
                         writer.writerow(field_names)  # 写入CSV文件的表头
                         writer.writerow(file_write)  # 写入变量数据
-                        exit(1)
+                    print("\033[31m程序已终止，按任意键退出……\033[0m")
+                    input()
+                    exit(1)
         else:
             print("CSV文件不存在，已创建文件 " + file_name1)
             with open(file_name1, mode='a', newline='') as file:
@@ -212,12 +214,14 @@ while True:
                         writer = csv.writer(file)
                         writer.writerow(file_write1)  # 写入变量数据
                 else:
-                    print("表头与定义的字段名称不匹配,请检查")
+                    print("错误!!!  " + file_name2 + "表头与定义的字段名称不匹配,请检查")
                     with open(file_name2, mode='a', newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(field_names1)  # 写入CSV文件的表头
                         writer.writerow(file_write1)  # 写入变量数据
-                        exit(1)
+                    print("\033[31m程序已终止，按任意键退出……\033[0m")
+                    input()
+                    exit(1)
         else:
             print("CSV文件不存在，已创建文件 " + file_name2)
             with open(file_name2, mode='a', newline='') as file:
@@ -262,12 +266,14 @@ while True:
                         writer = csv.writer(file)
                         writer.writerow(file_write)  # 写入变量数据
                 else:
-                    print("表头与定义的字段名称不匹配,请检查")
+                    print("错误!!!  " + file_name + "表头与定义的字段名称不匹配,请检查")
                     with open(file_name, mode='a', newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(field_names)  # 写入CSV文件的表头
                         writer.writerow(file_write)  # 写入变量数据
-                        exit(1)
+                    print("\033[31m程序已终止，按任意键退出……\033[0m")
+                    input()
+                    exit(1)
         else:
             print("CSV文件不存在，已创建文件 " + file_name)
             with open(file_name, mode='a', newline='') as file:
