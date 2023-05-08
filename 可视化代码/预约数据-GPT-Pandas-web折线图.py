@@ -24,7 +24,7 @@ for col in data.columns[1:]:
     fig.add_trace(go.Scatter(x=x, y=y, name=col))
 
 # 设置图形的标题和坐标轴标签
-fig.update_layout(title="点击右侧图例可以关闭单条折线，点击右上工具可缩放<br>PS:主要是看每分钟人数的差值", xaxis_title="时间", yaxis_title="在线人数")
+fig.update_layout(title="点击右侧图例可以关闭单条折线，点击右上工具可缩放<br>PS:主要是看每分钟人数的差值", xaxis_title="时间", yaxis_title="预约人数")
 
 # 添加注释
 fig.add_annotation(x="2023/4/7 0:00", y=0, text="2023/4/7 0:00<br>此时官网“阴兵上线”", showarrow=True, arrowhead=1)
