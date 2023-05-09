@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 current_dir = os.getcwd()  # 获取当前目录
 parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))  # 获取上一目录
 file_name = parent_dir + r'\数据\合并预约人数.csv'
-output_name = parent_dir + r'\index.html'
+output_name = parent_dir + r'\预约数据.html'
 
 # 读取 CSV 文件
 data = pd.read_csv(file_name)
@@ -24,7 +24,7 @@ for col in data.columns[1:]:
     fig.add_trace(go.Scatter(x=x, y=y, name=col))
 
 # 设置图形的标题和坐标轴标签
-fig.update_layout(title="点击右侧图例可以关闭单条折线，点击右上工具可缩放<br>PS:主要是看每分钟人数的差值", xaxis_title="时间", yaxis_title="预约人数")
+fig.update_layout(title="全网预约详情<br>双击右侧图例可以打开单条折线，点击右上工具可缩放<br>PS:主要是看每分钟人数的差值", xaxis_title="时间", yaxis_title="预约人数")
 
 # 添加注释
 fig.add_annotation(x="2023/4/7 0:00", y=0, text="2023/4/7 0:00<br>此时官网“阴兵上线”", showarrow=True, arrowhead=1)
