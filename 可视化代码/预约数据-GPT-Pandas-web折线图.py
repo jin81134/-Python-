@@ -32,6 +32,7 @@ fig.add_annotation(x="2023/4/12 18:06", y=147071, text="2023/4/12 18:06<br>官�
                    showarrow=True, arrowhead=1)
 fig.add_annotation(x="2023/4/23 8:56", y=1000015, text="2023/4/23 8:56<br>全网预约”人数“100万", showarrow=True, arrowhead=1)
 fig.add_annotation(x="2023/4/25 10:57", y=334074, text="2023/4/25 10:57<br>官网人数突增约3000人", showarrow=True, arrowhead=1)
+fig.add_annotation(x="2023/5/10 13:19", y=1507651, text="2023/5/10 13:19<br>由于CMD卡住数据未获取到", showarrow=True, arrowhead=1)
 
 # 将图表保存为 HTML 文件
 fig.write_html(output_name)
